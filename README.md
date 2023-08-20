@@ -1,27 +1,54 @@
-# React + TypeScript + Vite
+# GrowMeOrganic Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the result of an internship assignment for GrowMeOrganic.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This React-based web application was developed as part of the GrowMeOrganic internship assignment. It demonstrates various skills and features as required by the assignment instructions.
 
-## Expanding the ESLint configuration
+## Assignment Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+For detailed instructions related to this assignment, please refer to the [Assignment Instructions](https://link-to-assignment-instructions).
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- **Application Configuration:** Built using Vite and React.
+- **User Authentication:** Includes a login page with user data stored in local storage.
+- **Data Display:** Utilizes tables to display data retrieved from an API.
+- **Department and Sub-Department Component:** Implements a component that displays department and sub-department data.
+- **Deployment:** The application is deployed on Netlify.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Live Site
+
+You can explore the live version of this project [here](https://dashing-faloodeh-a2aca4.netlify.app/).
+
+## Getting Started Locally
+
+To run this project locally:
+
+1. Clone the GitHub repository:
+
+   ```bash
+   git clone https://github.com/amuwal/Assignment-GrowMeOrganic.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Assignment-GrowMeOrganic
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm i
+   ```
+
+4. Start the development server:
+   ```
+   npm run dev
+   ```
+
+## Homepage
+
+![Homepage](images/homepage.png)
