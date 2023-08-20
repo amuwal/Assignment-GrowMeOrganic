@@ -48,10 +48,9 @@ const NavBar: React.FC<NavBarProps> = ({
 
   return (
     <AppBar position="static">
-      <Toolbar className="bg-blue-500">
-        {/* Logo */}
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Your Logo
+      <Toolbar className="bg-blue-500 flex">
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          The Logo
         </Typography>
 
         {isAuthenticated ? (

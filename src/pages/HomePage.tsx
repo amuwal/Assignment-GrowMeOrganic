@@ -8,7 +8,7 @@ import NavBar from "../components/Navbar";
 import { Button, Typography } from "@mui/material";
 
 // Define types and interfaces
-type User = {
+export type User = {
   username: string;
   password: string;
   email: string;
@@ -38,12 +38,8 @@ const HomePage: React.FunctionComponent<HomePageProps> = ({
       />
       <div className="container mx-auto p-4">
         <div className="flex flex-col gap-4">
-          <div>
-            <Component1 />
-          </div>
-          <div>
-            <Component2 />
-          </div>
+          <Component1 />
+          <Component2 />
         </div>
       </div>
     </div>
@@ -79,7 +75,11 @@ const NotLoggedIn = () => {
       <Typography variant="body1" paragraph className="mb-4">
         Redirecting to login page in {countdown} seconds
       </Typography>
-      <Button variant="contained" color="primary" onClick={()=>navigate("/login")}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => navigate("/login")}
+      >
         Login
       </Button>
     </div>

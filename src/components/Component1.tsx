@@ -1,36 +1,34 @@
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
   {
     field: "id",
     headerName: "ID",
-    width: 150,
+    width: 100,
     editable: true,
   },
   {
     field: "userId",
     headerName: "User ID",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "title",
-    headerName: "Title",
-    type: "number",
-    width: 110,
+    width: 100,
     editable: true,
   },
   {
     field: "completed",
     headerName: "Completed",
-    description: "This column has a value getter and is not sortable.",
+    type: "boolean",
     sortable: false,
-    width: 160,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    width: 100,
   },
+  {
+    field: "title",
+    headerName: "Title",
+    flex: 1,
+    editable: true,
+  },
+
 ];
 
 const Component1 = () => {
@@ -65,18 +63,18 @@ const Component1 = () => {
         Component 1: Data-Grid
       </h2>
 
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ height: 320, width: "100%" }}>
         <DataGrid
           rows={rows}
           columns={columns}
           initialState={{
             pagination: {
               paginationModel: {
-                pageSize: 5,
+                pageSize: 4,
               },
             },
           }}
-          pageSizeOptions={[5]}
+          pageSizeOptions={[4]}
           checkboxSelection
           disableRowSelectionOnClick
         />

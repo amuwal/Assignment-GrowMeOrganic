@@ -3,12 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 
 // Define types and interfaces
-type User = {
-  username: string;
-  password: string;
-  email: string;
-  phone?: string;
-} | null;
+import { User } from "./HomePage";
 
 type LoginProps = {
   user: User;
@@ -17,7 +12,7 @@ type LoginProps = {
   setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-// Define your component
+// Define the component
 const LoginPage: React.FunctionComponent<LoginProps> = ({
   user,
   setUser,
@@ -89,6 +84,21 @@ const NewUserLogin = ({
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleDummyLogin = () => {
+    const dummyData = {
+      username: "Jhon Doe",
+      email: "jhon@gmail.com",
+      phone: "1234567234",
+      password: "jhon",
+    };
+
+    localStorage.setItem("user", JSON.stringify(dummyData));
+    setFormData(dummyData)
+    setIsAuthenticated(true);
+    setUser(dummyData);
+    navigate("/");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -197,8 +207,16 @@ const NewUserLogin = ({
             <p className="text-red-500 text-sm">{errors.password}</p>
           )}
           <button
+            type="button"
+            className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            onClick={handleDummyLogin}
+          >
+            Login as Dummy User
+          </button>
+          <button
             type="submit"
-            className="w-full bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            id="submit-button"
+            className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Log In
           </button>
